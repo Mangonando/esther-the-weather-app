@@ -8,9 +8,11 @@ export default function App() {
   useEffect(() => {
     const getWeatherData = async () => {
       try {
-        //something
-      } catch {
-        //something else
+        const response = await axios.get(
+          'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}',
+        )
+      } catch (error) {
+        console.error("Error while fetching Open Weather's API")
       }
     }
     getWeatherData()
