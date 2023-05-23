@@ -1,5 +1,7 @@
-# 🌬 💨 💨 Esther 
-### The Weather App 
+# 🌬 💨 💨 Esther
+
+### The Weather App
+
 Weather App { Typescript, React, TailwindCSS, Framer Motion }
 
 # Getting Started with Create React App
