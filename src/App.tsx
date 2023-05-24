@@ -4,18 +4,18 @@ import logo from './logo.svg'
 import './App.css'
 
 export default function App() {
-  const [weatherData, setWeatherData] = useState(null)
+  const [weatherData, setWeatherData] = useState<null | any>(null)
 
   useEffect(() => {
     const getWeatherData = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=52.5200&lon=13.4050&appid=${process.env.ESTHER_WEATHER_API_KEY}`,
+          `https://api.openweathermap.org/data/2.5/weather?lat=52.5200&lon=13.4050&appid=${process.env.REACT_APP_ESTHER_WEATHER_API_KEY}`,
         )
         setWeatherData(response.data)
         console.log('API fetch', response.data)
       } catch (error) {
-        console.error("Error while fetching Open Weather's API")
+        console.error("Error while fetching Open Weather's API", error)
       }
     }
     getWeatherData()
@@ -24,7 +24,11 @@ export default function App() {
   return (
     <>
       <div className="i-box">🌬 💨 💨 Esther</div>
-      {/* {weatherData ? <div className="i-box">{weatherData}</div> : ''} */}
+      {weatherData ? (
+        <div className="i-box">{weatherData.name}</div>
+      ) : (
+        'Where the fuck is Esther?'
+      )}
     </>
   )
 }
