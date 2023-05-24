@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import logo from './logo.svg'
 import './App.css'
+import NavBar from './components/NavBar'
 
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
@@ -37,7 +38,7 @@ export default function App() {
 
   return (
     <>
-      <div className="i-box">🌬 💨 💨 Esther</div>
+      <NavBar />
       <form onSubmit={handleSearchBarSubmit}>
         <input
           type="text"
@@ -55,8 +56,10 @@ export default function App() {
             {weatherData.name}, {weatherData.sys.country}
           </div>
           <div>{weatherData.weather[0].main}</div>
-          <div>{weatherData.main.temp}</div>
-          <div>{weatherData.main.feels_like}</div>
+          <div>Temp: {weatherData.main.temp}</div>
+          <div>Feels like: {weatherData.main.feels_like}</div>
+          <div>Temp min: {weatherData.main.temp_min}</div>
+          <div>Temp max: {weatherData.main.temp_max}</div>
         </div>
       ) : (
         ''
