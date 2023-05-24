@@ -10,7 +10,7 @@ export default function App() {
     const getWeatherData = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=52.5200&lon=13.4050&appid=${process.env.REACT_APP_ESTHER_WEATHER_API_KEY}`,
+          `https://api.openweathermap.org/data/2.5/weather?q=medellin&appid=${process.env.REACT_APP_ESTHER_WEATHER_API_KEY}`,
         )
         setWeatherData(response.data)
         console.log('API fetch', response.data)
@@ -24,10 +24,12 @@ export default function App() {
   return (
     <>
       <div className="i-box">🌬 💨 💨 Esther</div>
+      <input type="text" className="i-box" />
       {weatherData ? (
         <div>
-          <div>{weatherData.name}</div>
-          <div>{weatherData.sys.country}</div>
+          <div>
+            {weatherData.name}, {weatherData.sys.country}
+          </div>
           <div>{weatherData.weather[0].main}</div>
           <div>{weatherData.main.temp}</div>
           <div>{weatherData.main.feels_like}</div>
