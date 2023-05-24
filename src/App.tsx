@@ -32,6 +32,7 @@ export default function App() {
   const handleSearchBarSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setCity(input)
+    setInput('')
   }
 
   return (
