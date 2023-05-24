@@ -6,6 +6,7 @@ import './App.css'
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
   const [city, setCity] = useState<string>('Medellin')
+  const [input, setInput] = useState<string>('')
 
   useEffect(() => {
     const getWeatherData = async () => {
@@ -25,13 +26,28 @@ export default function App() {
   const handleCityChange = (e: {
     target: { value: React.SetStateAction<string> }
   }) => {
-    setCity(e.target.value)
+    setInput(e.target.value)
+  }
+
+  const handleSearchBarSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+    setCity(input)
   }
 
   return (
     <>
       <div className="i-box">🌬 💨 💨 Esther</div>
-      <input type="text" className="i-box" onChange={handleCityChange} />
+      <form onSubmit={handleSearchBarSubmit}>
+        <input
+          type="text"
+          className="i-box"
+          value={input}
+          onChange={handleCityChange}
+        />
+        <button type="submit" className="i-box">
+          Search
+        </button>
+      </form>
       {weatherData ? (
         <div>
           <div>
