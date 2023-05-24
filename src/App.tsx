@@ -5,12 +5,13 @@ import './App.css'
 
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
+  const [city, setCity] = useState<string>('Medellin')
 
   useEffect(() => {
     const getWeatherData = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=medellin&appid=${process.env.REACT_APP_ESTHER_WEATHER_API_KEY}`,
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_ESTHER_WEATHER_API_KEY}`,
         )
         setWeatherData(response.data)
         console.log('API fetch', response.data)
