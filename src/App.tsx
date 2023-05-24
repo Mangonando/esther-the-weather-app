@@ -7,7 +7,6 @@ import NavBar from './components/NavBar'
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
   const [city, setCity] = useState<string>('Medellin')
-  const [input, setInput] = useState<string>('')
 
   useEffect(() => {
     const getWeatherData = async () => {
@@ -24,42 +23,19 @@ export default function App() {
     getWeatherData()
   }, [city])
 
-  const handleCityChange = (e: {
-    target: { value: React.SetStateAction<string> }
-  }) => {
-    setInput(e.target.value)
-  }
-
-  const handleSearchBarSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault()
-    setCity(input)
-    setInput('')
-  }
-
   return (
     <>
       <NavBar />
-      <form onSubmit={handleSearchBarSubmit}>
-        <input
-          type="text"
-          className="i-box"
-          value={input}
-          onChange={handleCityChange}
-        />
-        <button type="submit" className="i-box">
-          Search
-        </button>
-      </form>
       {weatherData ? (
         <div>
           <div>
             {weatherData.name}, {weatherData.sys.country}
           </div>
           <div>{weatherData.weather[0].main}</div>
-          <div>Temp: {weatherData.main.temp}</div>
-          <div>Feels like: {weatherData.main.feels_like}</div>
-          <div>Temp min: {weatherData.main.temp_min}</div>
-          <div>Temp max: {weatherData.main.temp_max}</div>
+          <div>Temp: {weatherData.main.temp}c</div>
+          <div>Feels like: {weatherData.main.feels_like}c</div>
+          <div>Temp min: {weatherData.main.temp_min}c</div>
+          <div>Temp max: {weatherData.main.temp_max}c</div>
         </div>
       ) : (
         ''
