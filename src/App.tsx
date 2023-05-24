@@ -25,9 +25,15 @@ export default function App() {
     <>
       <div className="i-box">🌬 💨 💨 Esther</div>
       {weatherData ? (
-        <div className="i-box">{weatherData.name}</div>
+        <div>
+          <div>{weatherData.name}</div>
+          <div>{weatherData.sys.country}</div>
+          <div>{weatherData.weather[0].main}</div>
+          <div>{weatherData.main.temp}</div>
+          <div>{weatherData.main.feels_like}</div>
+        </div>
       ) : (
-        'Where the fuck is Esther?'
+        ''
       )}
     </>
   )
