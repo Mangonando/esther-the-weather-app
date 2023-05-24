@@ -20,7 +20,7 @@ export default function App() {
       }
     }
     getWeatherData()
-  }, [])
+  }, [city])
 
   const handleCityChange = (e: {
     target: { value: React.SetStateAction<string> }
