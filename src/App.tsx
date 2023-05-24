@@ -22,10 +22,14 @@ export default function App() {
     getWeatherData()
   }, [])
 
+  const handleCityChange = (e: { value: React.SetStateAction<string> }) => {
+    setCity(e.value)
+  }
+
   return (
     <>
       <div className="i-box">🌬 💨 💨 Esther</div>
-      <input type="text" className="i-box" />
+      <input type="text" className="i-box" onChange={handleCityChange} />
       {weatherData ? (
         <div>
           <div>
