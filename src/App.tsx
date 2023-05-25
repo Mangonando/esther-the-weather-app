@@ -4,7 +4,7 @@ import logo from './logo.svg'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import { SearchBar, SearchBarProps } from './components/SearchBar/SearchBar'
-import { Weather } from './components/Weather'
+import { Weather } from './components/Weather/Weather'
 import Footer from './components/Footer/Footer'
 
 export default function App() {

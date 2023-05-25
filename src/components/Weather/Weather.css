@@ -1,0 +1,11 @@
+.temperature-container {
+  @apply flex flex-row;
+}
+
+.temperature-number {
+  @apply text-9xl;
+}
+
+.temperature-symbol {
+  @apply text-8xl;
+}
