@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import logo from './logo.svg'
 import './App.css'
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/NavBar'
 import { SearchBar, SearchBarProps } from './components/SearchBar'
 import { Weather } from './components/Weather'
-import Footer from './components/Footer'
+import Footer from './components/NavBar/Footer/Footer'
 
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
