@@ -2,7 +2,7 @@ import React from 'react'
 import GithubIcon from './icons/github_icon.svg'
 import LinkedinIcon from './icons/linkedin_icon.svg'
 
-export default function NavBar() {
+export default function Footer() {
   return (
     <>
       <div>Made with ♥️ by.</div>
