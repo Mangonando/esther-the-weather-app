@@ -1,0 +1,16 @@
+.container {
+  @apply flex flex-row justify-between 
+    max-w-2xl;
+}
+
+.text {
+  @apply flex flex-row;
+}
+
+.link {
+  @apply text-blue-600 underline underline-offset-2;
+}
+
+.social-media-icons {
+  @apply flex flex-row gap-2 lg:gap-4;
+}
