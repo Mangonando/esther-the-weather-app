@@ -3,10 +3,18 @@ import axios from 'axios'
 import logo from './logo.svg'
 import './App.css'
 import NavBar from './components/NavBar'
+import { SearchBar, SearchBarProps } from './components/SearchBar'
+import Footer from './components/Footer'
 
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
   const [city, setCity] = useState<string>('Medellin')
+
+  const handleCityUpdate: SearchBarProps['newCity'] = (
+    newCity: React.SetStateAction<string>,
+  ) => {
+    setCity(newCity)
+  }
 
   useEffect(() => {
     const getWeatherData = async () => {
@@ -26,6 +34,7 @@ export default function App() {
   return (
     <>
       <NavBar />
+      <SearchBar newCity={handleCityUpdate} />
       {weatherData ? (
         <div>
           <div>
@@ -40,6 +49,7 @@ export default function App() {
       ) : (
         ''
       )}
+      <Footer />
     </>
   )
 }

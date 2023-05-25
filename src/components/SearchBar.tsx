@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 
-export default function SearchBar() {
+export interface SearchBarProps {
+  newCity: (city: string) => void
+}
+
+export const SearchBar: React.FC<SearchBarProps> = ({ newCity }) => {
   const [input, setInput] = useState<string>('')
 
-  const handleCityChange = (e: {
-    target: { value: React.SetStateAction<string> }
-  }) => {
+  const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
   }
 
-  const handleSearchBarSubmit = (e: { preventDefault: () => void }) => {
+  const handleSearchBarSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setCity(input)
+    newCity(input)
     setInput('')
   }
 
