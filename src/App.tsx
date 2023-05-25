@@ -5,7 +5,7 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import { SearchBar, SearchBarProps } from './components/SearchBar'
 import { Weather } from './components/Weather'
-import Footer from './components/NavBar/Footer/Footer'
+import Footer from './components/Footer/Footer'
 
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
