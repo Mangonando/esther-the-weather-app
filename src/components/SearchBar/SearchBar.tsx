@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './SearchBar.css'
 
 export interface SearchBarProps {
   newCity: (city: string) => void
@@ -18,14 +19,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({ newCity }) => {
   }
 
   return (
-    <form onSubmit={handleSearchBarSubmit}>
+    <form onSubmit={handleSearchBarSubmit} className="form">
       <input
         type="text"
-        className="i-box"
+        className="search-bar"
         value={input}
         onChange={handleCityChange}
       />
-      <button type="submit" className="i-box">
+      <button type="submit" className="button">
         Search
       </button>
     </form>
