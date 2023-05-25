@@ -4,6 +4,7 @@ import logo from './logo.svg'
 import './App.css'
 import NavBar from './components/NavBar'
 import { SearchBar, SearchBarProps } from './components/SearchBar'
+import { Weather } from './components/Weather'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -35,20 +36,7 @@ export default function App() {
     <>
       <NavBar />
       <SearchBar newCity={handleCityUpdate} />
-      {weatherData ? (
-        <div>
-          <div>
-            {weatherData.name}, {weatherData.sys.country}
-          </div>
-          <div>{weatherData.weather[0].main}</div>
-          <div>Temp: {weatherData.main.temp}c</div>
-          <div>Feels like: {weatherData.main.feels_like}c</div>
-          <div>Temp min: {weatherData.main.temp_min}c</div>
-          <div>Temp max: {weatherData.main.temp_max}c</div>
-        </div>
-      ) : (
-        ''
-      )}
+      {weatherData ? <Weather weatherData={weatherData} /> : ''}
       <Footer />
     </>
   )
