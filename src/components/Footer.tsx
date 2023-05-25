@@ -5,7 +5,7 @@ import LinkedinIcon from './icons/linkedin_icon.svg'
 export default function NavBar() {
   return (
     <>
-      <div className="i-box">Made with ♥️ by.</div>
+      <div>Made with ♥️ by.</div>
       <a
         href="https://github.com/Mangonando"
         target="_blank"
