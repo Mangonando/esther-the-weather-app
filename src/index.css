@@ -15,7 +15,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.i-box {
-  @apply border-red-600 border-2;
-}

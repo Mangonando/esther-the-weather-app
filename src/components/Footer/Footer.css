@@ -8,7 +8,7 @@
 }
 
 .link {
-  @apply text-blue-600 underline underline-offset-2;
+  @apply text-retro-blue underline underline-offset-2;
 }
 
 .social-media-icons {
