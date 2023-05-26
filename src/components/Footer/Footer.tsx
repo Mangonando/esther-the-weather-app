@@ -6,7 +6,7 @@ import LinkedinIcon from '../../icons/linkedin_icon.svg'
 export default function Footer() {
   return (
     <>
-      <div className="container">
+      <div className="footer-container">
         <div className="text">
           <div>Made with ♥️&nbsp; by&nbsp;</div>
           <a

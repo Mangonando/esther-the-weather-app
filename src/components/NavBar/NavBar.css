@@ -1,8 +1,15 @@
-.container {
+.nav-bar-container {
   @apply flex flex-row justify-between 
-    max-w-2xl;
+    max-w-2xl
+    bg-retro-blue
+    p-4;
 }
 
-.header {
-  @apply font-bold;
+.nav-bar-icon {
+  @apply text-5xl;
+}
+
+.nav-bar-header {
+  @apply text-5xl font-bold mr-4
+    text-retro-cream;
 }

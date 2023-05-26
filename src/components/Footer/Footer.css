@@ -1,14 +1,16 @@
-.container {
+.footer-container {
   @apply flex flex-row justify-between 
-    max-w-2xl;
+    max-w-2xl
+    bg-retro-blue
+    p-4 lg:p-8;
 }
 
 .text {
-  @apply flex flex-row;
+  @apply flex flex-row text-retro-cream;
 }
 
 .link {
-  @apply text-retro-blue underline underline-offset-2;
+  @apply text-retro-cream underline underline-offset-2;
 }
 
 .social-media-icons {
