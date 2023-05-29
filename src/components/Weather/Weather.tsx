@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import './Weather.css'
 
 interface Sys {
@@ -32,21 +31,12 @@ export const Weather: React.FC<WeatherProps> = ({ weatherData }) => {
   return (
     <>
       <div className="weather-container component-padding">
-        <motion.div
-          className="temperature-container"
-          initial={{ scale: 0 }}
-          animate={{ rotate: 360, scale: 1 }}
-          transition={{
-            type: 'spring',
-            stiffness: 260,
-            damping: 20,
-          }}
-        >
+        <div className="temperature-container">
           <div className="temperature-number">
             {Math.floor(weatherData.main.temp)}
           </div>
           <div className="temperature-symbol">c</div>
-        </motion.div>
+        </div>
         <div className="location-name">
           {weatherData.name}, {weatherData.sys.country}
         </div>
