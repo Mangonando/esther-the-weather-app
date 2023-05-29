@@ -14,3 +14,22 @@
 .temperature-symbol {
   @apply text-8xl;
 }
+
+.location-name {
+  @apply font-bold text-retro-blue text-2xl;
+}
+
+.weather-condition {
+  @apply font-bold text-retro-blue text-lg;
+}
+
+.additional-temperature-container {
+  @apply flex flex-row gap-4
+  text-retro-blue font-semibold
+    mt-4;
+}
+
+.additional-temperature-box {
+  @apply flex flex-col items-center
+  text-retro-blue/75 font-semibold;
+}
