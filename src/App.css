@@ -14,5 +14,6 @@
 } */
 
 .content-centered {
-  @apply flex justify-center items-center;
+  @apply flex flex-col items-center justify-center
+    mx-auto max-w-2xl min-h-screen;
 }

@@ -1,6 +1,6 @@
 .footer-container {
   @apply flex flex-row justify-between 
-    max-w-2xl
+    w-full
     bg-retro-blue
     p-4 lg:p-8;
 }

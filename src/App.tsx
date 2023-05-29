@@ -34,10 +34,12 @@ export default function App() {
 
   return (
     <>
-      <NavBar />
-      <SearchBar newCity={handleCityUpdate} />
-      {weatherData ? <Weather weatherData={weatherData} /> : ''}
-      <Footer />
+      <div className="content-centered">
+        <NavBar />
+        <SearchBar newCity={handleCityUpdate} />
+        {weatherData ? <Weather weatherData={weatherData} /> : ''}
+        <Footer />
+      </div>
     </>
   )
 }

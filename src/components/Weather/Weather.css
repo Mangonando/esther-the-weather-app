@@ -1,5 +1,10 @@
+.weather-container {
+  @apply flex flex-col items-center
+    bg-retro-orange w-full pb-4;
+}
+
 .temperature-container {
-  @apply flex flex-row;
+  @apply flex flex-row items-end text-retro-blue;
 }
 
 .temperature-number {

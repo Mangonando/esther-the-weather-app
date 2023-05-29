@@ -1,13 +1,16 @@
 .form {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col gap-2 bg-retro-orange w-full items-center
+    py-4;
 }
 
 .search-bar {
-  @apply border-2 border-retro-blue
-    max-w-2xl;
+  @apply border-2 border-retro-green-dark rounded-full
+    bg-retro-sand
+      py-1 px-4;
 }
 
 .button {
-  @apply bg-retro-green font-bold
+  @apply rounded-full px-6 py-1
+    bg-retro-green-dark text-retro-sand font-bold
     max-w-lg;
 }
