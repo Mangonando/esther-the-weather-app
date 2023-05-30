@@ -37,7 +37,10 @@ export default function App() {
       <div className="content-centered">
         <NavBar />
         <SearchBar newCity={handleCityUpdate} />
-        {weatherData ? <Weather weatherData={weatherData} /> : ''}
+        <div className="weather-wrapper">
+          {weatherData ? <Weather weatherData={weatherData} /> : ''}
+        </div>
+
         <Footer />
       </div>
     </>

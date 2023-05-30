@@ -2,3 +2,7 @@
   @apply flex flex-col items-center justify-center
     mx-auto max-w-2xl min-h-screen;
 }
+
+.weather-wrapper {
+  @apply h-[16.8rem] w-full bg-retro-orange;
+}
