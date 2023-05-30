@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './SearchBar.css'
+import { motion } from 'framer-motion'
 
 export interface SearchBarProps {
   newCity: (city: string) => void
@@ -26,9 +27,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({ newCity }) => {
         value={input}
         onChange={handleCityChange}
       />
-      <button type="submit" className="button">
+      <motion.button
+        type="submit"
+        className="button"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.7 }}
+      >
         Search
-      </button>
+      </motion.button>
     </form>
   )
 }
