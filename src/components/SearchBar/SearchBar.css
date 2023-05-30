@@ -5,12 +5,14 @@
 
 .search-bar {
   @apply border-2 border-retro-green-dark rounded-full
-    bg-retro-sand
+    bg-retro-sand font-semibold
       py-1 px-4;
 }
 
 .button {
   @apply rounded-full px-6 py-1
     bg-retro-green-dark text-retro-sand font-bold
-    max-w-lg;
+    max-w-lg border-retro-green-dark border-2
+    hover:bg-retro-green hover:border-retro-green-dark
+    hover:text-retro-green-dark;
 }
