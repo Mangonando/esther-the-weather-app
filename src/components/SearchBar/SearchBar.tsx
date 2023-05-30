@@ -21,11 +21,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({ newCity }) => {
 
   return (
     <form onSubmit={handleSearchBarSubmit} className="form">
-      <input
+      <motion.input
         type="text"
         className="search-bar"
         value={input}
         onChange={handleCityChange}
+        whileHover={{ scale: 1.1 }}
       />
       <motion.button
         type="submit"
