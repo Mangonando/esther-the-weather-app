@@ -33,32 +33,89 @@ export const Weather: React.FC<WeatherProps> = ({ weatherData }) => {
     <>
       <div className="weather-container component-padding">
         <motion.div
+          key={weatherData.main.temp}
           className="temperature-container"
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, staggerChildren: 0.5 }}
+          transition={{ duration: 1 }}
         >
-          <motion.div className="temperature-number">
+          <div className="temperature-number">
             {Math.floor(weatherData.main.temp)}
-          </motion.div>
-          <motion.div className="temperature-symbol">c</motion.div>
+          </div>
+          <div className="temperature-symbol">c</div>
         </motion.div>
-        <div className="location-name">
+        <motion.div
+          key={weatherData.name}
+          className="location-name"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+        >
           {weatherData.name}, {weatherData.sys.country}
-        </div>
-        <div className="weather-condition">{weatherData.weather[0].main}</div>
+        </motion.div>
+        <motion.div
+          key={`${weatherData.weather[0].main}-${weatherData.name}`}
+          className="weather-condition"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.75 }}
+        >
+          {weatherData.weather[0].main}
+        </motion.div>
         <div className="additional-temperature-container">
           <div className="additional-temperature-box">
-            <div>{Math.floor(weatherData.main.feels_like)}c</div>
-            <div>Feels like</div>
+            <motion.div
+              key={weatherData.main.feels_like}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}
+            >
+              {Math.floor(weatherData.main.feels_like)}c
+            </motion.div>
+            <motion.div
+              key={`Feels like-${weatherData.main.feels_like}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2.5 }}
+            >
+              Feels like
+            </motion.div>
           </div>
           <div className="additional-temperature-box">
-            <div>{Math.floor(weatherData.main.temp_min)}c</div>
-            <div>Temp min</div>
+            <motion.div
+              key={weatherData.main.temp_min}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}
+            >
+              {Math.floor(weatherData.main.temp_min)}c
+            </motion.div>
+            <motion.div
+              key={`Temp min-${weatherData.main.temp_min}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2.5 }}
+            >
+              Temp min
+            </motion.div>
           </div>
           <div className="additional-temperature-box">
-            <div>{Math.floor(weatherData.main.temp_max)}c</div>
-            <div>Temp max</div>
+            <motion.div
+              key={weatherData.main.temp_max}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2 }}
+            >
+              {Math.floor(weatherData.main.temp_max)}c
+            </motion.div>
+            <motion.div
+              key={`Temp max-${weatherData.main.temp_max}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2.5 }}
+            >
+              Temp max
+            </motion.div>
           </div>
         </div>
       </div>
