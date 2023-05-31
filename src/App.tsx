@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer'
 
 export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
-  const [city, setCity] = useState<string>('Medellin')
+  const [city, setCity] = useState<string>('Berlin')
 
   const handleCityUpdate: SearchBarProps['newCity'] = (
     newCity: React.SetStateAction<string>,
