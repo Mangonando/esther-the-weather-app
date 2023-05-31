@@ -15,6 +15,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({ newCity }) => {
 
   const handleSearchBarSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const regex = /^[A-Za-z\s]+$/
+    if (!input.match(regex)) {
+      alert('Only letters and spaces')
+      setInput('')
+      return
+    }
     newCity(input)
     setInput('')
   }
