@@ -27,7 +27,7 @@ export default function Footer() {
             <img src={GithubIcon} alt="Github Icon" />
           </a>
           <a
-            href="https://github.com/Mangonando/esther-the-weather-app"
+            href="https://www.linkedin.com/in/juan-f-ramirez/"
             target="_blank"
             rel="noopener noreferrer"
           >
