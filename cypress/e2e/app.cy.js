@@ -10,4 +10,10 @@ describe('Esther app', () => {
   it('contains cta text', () => {
     cy.contains('Search')
   })
+
+  it('displays valid city', () => {
+    cy.get('.search-bar').type('Barcelona')
+    cy.get('.button').click()
+    cy.contains('Barcelona')
+  })
 })
