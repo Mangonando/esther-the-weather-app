@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
-import { SearchBar, SearchBarProps } from './components/SearchBar/SearchBar'
+import { SearchBar, ISearchBarProps } from './components/SearchBar/SearchBar'
 import { Weather } from './components/Weather/Weather'
 import Footer from './components/Footer/Footer'
 
@@ -10,7 +10,7 @@ export default function App() {
   const [weatherData, setWeatherData] = useState<null | any>(null)
   const [city, setCity] = useState<string>('Berlin')
 
-  const handleCityUpdate: SearchBarProps['newCity'] = (
+  const handleCityUpdate: ISearchBarProps['newCity'] = (
     newCity: React.SetStateAction<string>,
   ) => {
     setCity(newCity)
