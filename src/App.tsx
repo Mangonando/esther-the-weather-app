@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import logo from './logo.svg'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import { SearchBar, SearchBarProps } from './components/SearchBar/SearchBar'

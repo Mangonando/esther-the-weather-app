@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import './SearchBar.css'
 import { motion } from 'framer-motion'
 
-export interface SearchBarProps {
+export interface ISearchBarProps {
   newCity: (city: string) => void
 }
 
-export const SearchBar: React.FC<SearchBarProps> = ({ newCity }) => {
+export const SearchBar: React.FC<ISearchBarProps> = ({ newCity }) => {
   const [input, setInput] = useState<string>('')
 
   const handleCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {

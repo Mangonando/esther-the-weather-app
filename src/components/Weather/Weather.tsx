@@ -2,15 +2,15 @@ import React from 'react'
 import './Weather.css'
 import { motion } from 'framer-motion'
 
-interface Sys {
+interface ISys {
   country: string
 }
 
-interface Weather {
+interface IWeather {
   main: string
 }
 
-interface Main {
+interface IMain {
   temp: number
   feels_like: number
   temp_min: number
@@ -19,9 +19,9 @@ interface Main {
 
 interface WeatherData {
   name: string
-  sys: Sys
-  weather: Weather[]
-  main: Main
+  sys: ISys
+  weather: IWeather[]
+  main: IMain
 }
 
 interface WeatherProps {
